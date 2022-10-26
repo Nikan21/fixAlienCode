@@ -16,6 +16,7 @@ export default function Contact() {
         <img
           key={contact.avatar}
           src={contact.avatar || null}
+          alt='Avatar'
         />
       </div>
 
@@ -35,6 +36,7 @@ export default function Contact() {
           <p>
             <a
               target="_blank"
+              rel='noreferrer'
               href={`https://twitter.com/${contact.twitter}`}
             >
               {contact.twitter}
@@ -53,7 +55,7 @@ export default function Contact() {
             action="destroy"
             onSubmit={(event) => {
               if (
-                !confirm(
+                !window.confirm(
                   "Please confirm you want to delete this record."
                 )
               ) {
